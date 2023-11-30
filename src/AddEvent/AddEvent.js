@@ -16,7 +16,6 @@ const AddEvent = ({ onAddEvent }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call the parent component's onAddEvent function with the form data
     onAddEvent(formData);
   };
 

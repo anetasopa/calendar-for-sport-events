@@ -12,13 +12,7 @@ const App = () => {
   const [lastScheduledOrPlayedEvent, setLastScheduledOrPlayedEvent] =
     useState(null);
 
-  useEffect(() => {
-    // Pobieraj dane, gdy komponent jest montowany
-    // Tu mogą pojawić się inne efekty pobierania danych, np. z API
-  }, []);
-
   const handleEventClick = (event) => {
-    // detail
     setSelectedEvent(event);
     setLastScheduledOrPlayedEvent(event);
     setCurrentPage('eventDetail');
