@@ -1,0 +1,85 @@
+.calendar-container {
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Arial', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.month-navigation button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #3498db;
+}
+
+.days-of-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.day-of-week {
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.event-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.event-item:hover {
+  background-color: #f5f5f5;
+}
+
+.event-item.played {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.event-item.scheduled {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn {
+  text-align: center;
+}
+
+.add-event-btn {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-event-btn:hover {
+  background-color: #2980b9;
+}
