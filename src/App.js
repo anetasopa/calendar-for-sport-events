@@ -31,8 +31,8 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
-      <nav className="navigation">
+    <div>
+      <nav>
         <button onClick={() => setCurrentPage('calendar')}>Calendar</button>
         <button onClick={() => setCurrentPage('addEvent')}>Add Event</button>
       </nav>
