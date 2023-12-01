@@ -4,6 +4,7 @@ p {
 
 .day {
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .calendar-container {
@@ -39,6 +40,7 @@ button {
 }
 
 .icons {
+  width: 40px;
   outline: 0;
   border: 0;
   cursor: pointer;
@@ -68,7 +70,7 @@ button {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
-  background: #e4f0ff;
+  background: #e5faff;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -97,7 +99,7 @@ button {
 
 .event-item {
   text-align: center;
-  padding: 7px;
+  padding: 10px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -109,13 +111,12 @@ button {
 }
 
 .played {
-  background-color: #4caf50;
+  background-color: rgba(32, 32, 84, 1);
   color: #fff;
 }
 
 .scheduled {
-  background-color: #2196f3;
-  color: #fff;
+  background-color: rgba(0, 212, 255, 1);
 }
 
 .add-event-btn {

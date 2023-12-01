@@ -21,7 +21,7 @@ const AddEvent = ({ onAddEvent }) => {
   };
 
   return (
-    <div className="add-event-page">
+    <div className="add-event-container">
       <h2>Add Event</h2>
       <form onSubmit={handleSubmit} className="add-event-form">
         <div>
