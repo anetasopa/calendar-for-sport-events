@@ -111,12 +111,14 @@ const Calendar = ({
               className={`event-item ${eventForDay ? eventForDay.status : ''}`}
               onClick={() => handleDayClick(day.date)}
             >
-              {day.day} -{' '}
-              {eventForDay
-                ? eventForDay.status === 'played'
-                  ? 'Played'
-                  : 'Scheduled'
-                : 'No Event'}
+              <p className="day">{day.day}</p>
+              <p>
+                {eventForDay
+                  ? eventForDay.status === 'played'
+                    ? 'Played'
+                    : 'Scheduled'
+                  : 'No Event'}
+              </p>
             </div>
           );
         })}

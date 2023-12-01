@@ -1,7 +1,19 @@
+p {
+  margin: 0;
+}
+
+.day {
+  margin-bottom: 5px;
+}
+
 .calendar-container {
   max-width: 800px;
-  margin: auto;
-  font-family: 'Arial', sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 h2 {
@@ -16,70 +28,77 @@ h2 {
   margin-bottom: 15px;
 }
 
-.month-navigation button {
-  background: none;
+button {
+  background-color: #4caf50;
+  color: #fff;
   border: none;
-  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  color: #3498db;
 }
 
 .days-of-week {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+  padding: 10px 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .day-of-week {
-  padding: 10px;
-  background-color: #3498db;
-  color: #fff;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
 }
 
 .event-list {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: 10px;
+}
+
+@media only screen and (min-width: 290px) and (max-width: 854px) {
+  .event-list {
+    gap: 0;
+  }
 }
 
 .event-item {
-  padding: 10px;
-  border: 1px solid #ddd;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .event-item:hover {
-  background-color: #f5f5f5;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.event-item.played {
-  background-color: #2ecc71;
+.played {
+  background-color: #4caf50;
   color: #fff;
 }
 
-.event-item.scheduled {
-  background-color: #e74c3c;
+.scheduled {
+  background-color: #2196f3;
   color: #fff;
-}
-
-.btn {
-  text-align: center;
 }
 
 .add-event-btn {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #3498db;
+  margin-top: 10px;
+  background-color: #ff5722;
   color: #fff;
   border: none;
+  padding: 15px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  font-size: 16px;
+  width: 100%;
 }
 
 .add-event-btn:hover {
-  background-color: #2980b9;
+  background-color: #e64a19;
 }
