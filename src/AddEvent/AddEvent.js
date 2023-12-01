@@ -46,7 +46,7 @@ const AddEvent = ({ onAddEvent }) => {
             className="add-event-input"
           />
         </div>
-        <button type="submit" className="add-event-button">
+        <button type="submit" className="add-event-btn">
           Add Event
         </button>
       </form>
