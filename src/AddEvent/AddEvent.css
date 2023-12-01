@@ -1,5 +1,5 @@
 .add-event-container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -9,6 +9,7 @@
 }
 
 .add-event-input {
+  width: 100%;
   background-color: #fff;
   height: 31px;
   padding: 3px 7px;
@@ -35,7 +36,7 @@ label {
 }
 
 .add-event-form {
-  width: 30%;
+  width: 60%;
   margin: auto;
 }
 
@@ -86,4 +87,9 @@ label {
 .add-event-btn:active {
   box-shadow: inset 0px 3px 7px rgba(32, 32, 84, 1);
   transform: translateY(2px);
+}
+
+h4 {
+  margin-bottom: 7px;
+  color: rgba(32, 32, 84, 1);
 }
