@@ -24,28 +24,24 @@ const AddEvent = ({ onAddEvent }) => {
     <div className="add-event-container">
       <h2>Add Event</h2>
       <form onSubmit={handleSubmit} className="add-event-form">
-        <div>
-          <label htmlFor="eventName">Event Name:</label>
-          <input
-            type="text"
-            id="eventName"
-            name="eventName"
-            value={formData.eventName}
-            onChange={handleInputChange}
-            className="add-event-input"
-          />
-        </div>
-        <div>
-          <label htmlFor="eventDate">Event Date:</label>
-          <input
-            type="date"
-            id="eventDate"
-            name="eventDate"
-            value={formData.eventDate}
-            onChange={handleInputChange}
-            className="add-event-input"
-          />
-        </div>
+        <label htmlFor="eventName">Event Name:</label>
+        <input
+          type="text"
+          id="eventName"
+          name="eventName"
+          value={formData.eventName}
+          onChange={handleInputChange}
+          className="add-event-input"
+        />
+        <label htmlFor="eventDate">Event Date:</label>
+        <input
+          type="date"
+          id="eventDate"
+          name="eventDate"
+          value={formData.eventDate}
+          onChange={handleInputChange}
+          className="add-event-input"
+        />
         <button type="submit" className="add-event-btn">
           Add Event
         </button>

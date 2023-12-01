@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-input {
+.add-event-input {
   background-color: #fff;
   height: 31px;
   padding: 3px 7px;
@@ -20,14 +20,18 @@ input {
   outline: 0;
   color: #111;
   font-size: 13px;
-  :focus {
-    border-color: #e77600;
-    box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
-  }
+  margin-bottom: 10px;
+}
+
+.add-event-input:focus {
+  border-color: rgba(0, 212, 255, 1);
+  box-shadow: 0 0 2px 1px rgba(0, 212, 255, 1);
 }
 
 label {
   margin-right: 10px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 
 .add-event-form {
