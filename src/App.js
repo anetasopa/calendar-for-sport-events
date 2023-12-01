@@ -9,6 +9,7 @@ const App = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [currentPage, setCurrentPage] = useState('calendar');
   const [events, setEvents] = useState(eventData.data);
+  console.log({ events111111: events });
   const [lastScheduledOrPlayedEvent, setLastScheduledOrPlayedEvent] =
     useState(null);
 
@@ -19,6 +20,12 @@ const App = () => {
   };
 
   const handleAddEvent = (newEvent) => {
+    console.log({ newEvent222222: newEvent });
+    console.log('Id:', events.length + 1);
+    console.log('DateVenue:', newEvent.eventDate);
+    console.log('DateName:', newEvent.eventName);
+    console.log('DateSeason:', newEvent.eventSeason);
+
     const newEventWithId = {
       ...newEvent,
       id: events.length + 1,

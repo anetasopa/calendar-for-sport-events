@@ -2,29 +2,35 @@ import './EventDetail.css';
 import React from 'react';
 
 const EventDetail = ({ event, lastScheduledOrPlayedEvent }) => {
+  console.log({ event333333: event });
+  console.log({ lastScheduledOrPlayedEven333333: lastScheduledOrPlayedEvent });
+
   const displayedEvent = event || lastScheduledOrPlayedEvent;
 
-  const getTeamInfo = (team) => {
-    if (team) {
+  const getTeamInfo = (team, event) => {
+    console.log({ event66666: event });
+    if (team || event) {
       return (
         <div>
           <p>
-            <span>Name:</span> {team.name}
+            <span>Name:</span>{' '}
+            {team?.name || event?.eventHomeTeamName || event?.eventAwayTeamName}
           </p>
           <p>
-            <span>Official Name:</span> {team.officialName}
+            <span>Official Name:</span> {team?.officialName}
           </p>
           <p>
-            <span>Slug:</span> {team.slug}
+            <span>Slug:</span>{' '}
+            {team?.slug || event?.eventHomeTeamSlug || event?.eventAwayTeamSlug}
           </p>
           <p>
-            <span>Abbreviation:</span> {team.abbreviation}
+            <span>Abbreviation:</span> {team?.abbreviation}
           </p>
           <p>
-            <span>Team Country Code:</span> {team.teamCountryCode}
+            <span>Team Country Code:</span> {team?.teamCountryCode}
           </p>
           <p>
-            <span>Stage Position:</span> {team.stagePosition}
+            <span>Stage Position:</span> {team?.stagePosition}
           </p>
         </div>
       );
@@ -43,7 +49,7 @@ const EventDetail = ({ event, lastScheduledOrPlayedEvent }) => {
             <span>Away Goals:</span> {result.awayGoals}
           </p>
           <p>
-            <span>Winner:</span> {result.winner}
+            <span>Winner:</span> {result?.winner || event?.eventResult}
           </p>
         </div>
       );
@@ -56,21 +62,21 @@ const EventDetail = ({ event, lastScheduledOrPlayedEvent }) => {
       <h2>Event Details</h2>
       {displayedEvent ? (
         <div className="event-details">
-          <h3>{displayedEvent.eventName}</h3>
           <p>
-            <span>Date:</span> {displayedEvent.dateVenue}
+            <span>Name:</span> {displayedEvent?.eventName || event?.eventName}
           </p>
           <p>
-            <span>Season:</span> {displayedEvent.season}
+            <span>Date:</span> {displayedEvent?.dateVenue || event?.eventData}
           </p>
-          {displayedEvent.status ? (
-            <p>
-              <span>Status:</span> {displayedEvent.status}
-            </p>
-          ) : null}
+          <p>
+            <span>Season:</span> {displayedEvent?.season || event?.eventSeason}
+          </p>
+          <p>
+            <span>Status:</span> {displayedEvent?.status || event?.eventStatus}
+          </p>
           <div>
             <h4>Home Team:</h4>
-            {getTeamInfo(displayedEvent.homeTeam)}
+            {getTeamInfo(displayedEvent.homeTeam, event)}
           </div>
           <div>
             <h4>Away Team:</h4>
@@ -82,7 +88,7 @@ const EventDetail = ({ event, lastScheduledOrPlayedEvent }) => {
           </div>
         </div>
       ) : (
-        <p>No event selected</p>
+        <p className="no-event-selected">No event selected</p>
       )}
     </div>
   );

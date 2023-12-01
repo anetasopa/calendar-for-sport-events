@@ -2,15 +2,18 @@ import './AddEvent.css';
 import React, { useState } from 'react';
 
 const AddEvent = ({ onAddEvent }) => {
+  console.log({ onAddEvent });
+
   const [formData, setFormData] = useState({
-    eventName: '',
-    eventDate: '',
-    eventStatus: '',
-    eventHomeTeamName: '',
-    eventHomeTeamSlug: '',
-    eventAwayTeamName: '',
-    eventAwayTeamSlug: '',
-    eventResult: '',
+    eventName: 'Name',
+    eventDate: '2023-12-16',
+    eventStatus: 'Status',
+    eventSeason: 'Season',
+    eventHomeTeamName: 'eventHomeTeamName',
+    eventHomeTeamSlug: 'eventHomeTeamSlug',
+    eventAwayTeamName: 'eventAwayTeamName',
+    eventAwayTeamSlug: 'eventAwayTeamSlug',
+    eventResult: 'eventResult',
   });
 
   const handleInputChange = (e) => {
@@ -54,6 +57,15 @@ const AddEvent = ({ onAddEvent }) => {
           id="eventStatus"
           name="eventStatus"
           value={formData.eventStatus}
+          onChange={handleInputChange}
+          className="add-event-input"
+        />
+        <label htmlFor="eventSeason">Event Season:</label>
+        <input
+          type="text"
+          id="eventSeason"
+          name="eventSeason"
+          value={formData.eventSeason}
           onChange={handleInputChange}
           className="add-event-input"
         />
