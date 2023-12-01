@@ -85,14 +85,18 @@ const Calendar = ({
     <div className="calendar-container">
       <h2>Calendar</h2>
       <div className="month-navigation">
-        <button onClick={handlePrevMonth}>&lt;</button>
+        <button className="icons" onClick={handlePrevMonth}>
+          &lt;
+        </button>
         <span>{`${monthNames[currentMonth]} ${currentYear}`}</span>
-        <button onClick={handleNextMonth}>&gt;</button>
+        <button className="icons" onClick={handleNextMonth}>
+          &gt;
+        </button>
       </div>
       <div className="days-of-week">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
           <div key={day} className="day-of-week">
-            {day}
+            <p className="week-days">{day}</p>
           </div>
         ))}
       </div>

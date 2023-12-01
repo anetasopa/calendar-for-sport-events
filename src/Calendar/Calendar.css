@@ -19,6 +19,7 @@ p {
 h2 {
   text-align: center;
   color: #333;
+  font-weight: bold;
 }
 
 .month-navigation {
@@ -37,11 +38,37 @@ button {
   cursor: pointer;
 }
 
+.icons {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(
+    100% 100% at 100% 0%,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(32, 32, 84, 1) 100%
+  );
+  box-shadow: 0px 2px 4px rgb(32, 32, 84, 1 / 40%),
+    0px 7px 13px -3px rgb(32, 32, 84, 1 / 30%),
+    inset 0px -3px 0px rgb(32, 32, 84, 1 / 50%);
+  border-radius: 6px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .days-of-week {
   display: flex;
   justify-content: space-between;
-  background-color: #eee;
-  padding: 10px 0;
+  padding: 5px 0;
+  background: #e4f0ff;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -50,6 +77,10 @@ button {
   flex: 1;
   text-align: center;
   font-weight: bold;
+}
+
+.week-days {
+  color: rgba(32, 32, 84, 1);
 }
 
 .event-list {
@@ -66,7 +97,7 @@ button {
 
 .event-item {
   text-align: center;
-  padding: 15px;
+  padding: 7px;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -88,8 +119,29 @@ button {
 }
 
 .add-event-btn {
+  margin-left: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow, transform;
+  background: radial-gradient(
+    100% 100% at 100% 0%,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(32, 32, 84, 1) 100%
+  );
+  box-shadow: 0px 2px 4px rgb(32, 32, 84, 1 / 40%),
+    0px 7px 13px -3px rgb(32, 32, 84, 1 / 30%),
+    inset 0px -3px 0px rgb(32, 32, 84, 1 / 50%);
+  padding: 0 32px;
+  border-radius: 6px;
+  color: #fff;
+  height: 48px;
+  font-size: 18px;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
   margin-top: 10px;
-  background-color: #ff5722;
+  font-weight: bold;
   color: #fff;
   border: none;
   padding: 15px;
@@ -100,5 +152,13 @@ button {
 }
 
 .add-event-btn:hover {
-  background-color: #e64a19;
+  box-shadow: 0px 4px 8px rgb(45 35 66 / 40%),
+    0px 7px 13px -3px rgb(45 35 66 / 30%),
+    inset 0px -3px 0px rgba(32, 32, 84, 1);
+  transform: translateY(-2px);
+}
+
+.add-event-btn:active {
+  box-shadow: inset 0px 3px 7px rgba(32, 32, 84, 1);
+  transform: translateY(2px);
 }
