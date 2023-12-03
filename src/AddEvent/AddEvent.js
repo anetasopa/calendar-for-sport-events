@@ -3,15 +3,15 @@ import React, { useState } from 'react';
 
 const AddEvent = ({ onAddEvent }) => {
   const [formData, setFormData] = useState({
-    eventName: 'Name',
-    eventDate: '2023-12-16',
-    eventStatus: 'scheduled',
-    eventSeason: 'Season',
-    eventHomeTeamName: 'eventHomeTeamName',
-    eventHomeTeamSlug: 'eventHomeTeamSlug',
-    eventAwayTeamName: 'eventAwayTeamName',
-    eventAwayTeamSlug: 'eventAwayTeamSlug',
-    eventResult: 'eventResult',
+    eventName: '',
+    eventDate: '',
+    eventStatus: '',
+    eventSeason: '',
+    eventHomeTeamName: '',
+    eventHomeTeamSlug: '',
+    eventAwayTeamName: '',
+    eventAwayTeamSlug: '',
+    eventResult: '',
   });
 
   const handleInputChange = (e) => {
