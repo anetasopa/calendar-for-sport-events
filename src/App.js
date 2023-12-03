@@ -11,6 +11,7 @@ const App = () => {
   const [events, setEvents] = useState(eventData.data);
   const [lastScheduledOrPlayedEvent, setLastScheduledOrPlayedEvent] =
     useState(null);
+  const [showContent, setShowContent] = useState(false);
 
   const handleEventClick = (event) => {
     setSelectedEvent(event);
@@ -30,36 +31,69 @@ const App = () => {
       id: events.length + 1,
       dateVenue: newEvent.eventDate,
     };
+
     setEvents((prevEvents) => [...prevEvents, newEventWithId]);
     setCurrentPage('calendar');
     setSelectedEvent(newEventWithId);
     setLastScheduledOrPlayedEvent(newEventWithId);
   };
 
+  const handleGoToAppClick = () => {
+    setCurrentPage('app');
+    setShowContent(true);
+  };
+
+  const handleGoToCalendarClick = () => {
+    setCurrentPage('calendar');
+    setShowContent(true);
+  };
+
   return (
     <div>
       <nav>
+        <button onClick={handleGoToAppClick}>Menu</button>
         <button onClick={() => setCurrentPage('calendar')}>Calendar</button>
         <button onClick={() => setCurrentPage('addEvent')}>Add Event</button>
       </nav>
 
-      {currentPage === 'calendar' && (
-        <Calendar
-          event={selectedEvent}
-          events={events}
-          onEventClick={handleEventClick}
-          onAddEvent={() => setCurrentPage('addEvent')}
-          setLastScheduledOrPlayedEvent={setLastScheduledOrPlayedEvent}
-        />
+      {showContent ? (
+        <>
+          {currentPage === 'calendar' && (
+            <Calendar
+              event={selectedEvent}
+              events={events}
+              onEventClick={handleEventClick}
+              onAddEvent={() => setCurrentPage('addEvent')}
+              setLastScheduledOrPlayedEvent={setLastScheduledOrPlayedEvent}
+            />
+          )}
+          {currentPage === 'eventDetail' && (
+            <EventDetail
+              event={selectedEvent}
+              events={events}
+              lastScheduledOrPlayedEvent={lastScheduledOrPlayedEvent}
+            />
+          )}
+          {currentPage === 'addEvent' && (
+            <AddEvent onAddEvent={handleAddEvent} />
+          )}
+          {currentPage === 'app' && (
+            <div className="container">
+              <div className="eleven">
+                <h1>SportEvent Planner </h1>
+              </div>
+              <button onClick={handleGoToCalendarClick}>Go to Calendar</button>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="container">
+          <div className="eleven">
+            <h1>SportEvent Planner </h1>
+          </div>
+          <button onClick={handleGoToCalendarClick}>Go to Calendar</button>
+        </div>
       )}
-      {currentPage === 'eventDetail' && (
-        <EventDetail
-          event={selectedEvent}
-          events={events}
-          lastScheduledOrPlayedEvent={lastScheduledOrPlayedEvent}
-        />
-      )}
-      {currentPage === 'addEvent' && <AddEvent onAddEvent={handleAddEvent} />}
     </div>
   );
 };
