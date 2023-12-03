@@ -6,20 +6,20 @@
 
 Introducing a dynamic sports events calendar project that enhances user engagement and accessibility.
 
-## Objective:
+### Objective:
 
 This project focuses on a sports events calendar where users can effortlessly view a schedule of events.
 
-## Features:
+### Features:
 
 * The calendar displays a diverse array of sports events.
 * Users enjoy the flexibility to add new events to the calendar.
 * Detailed information about each event is easily accessible.
 
-## Technology Stack:
+### Technology Stack:
 
 Developed using **React.js**, the project ensures a responsive and interactive user interface.
 
-## Deployment:
+### Deployment:
 
 Deployed on **Netlify**, this application guarantees seamless accessibility and optimal performance.
