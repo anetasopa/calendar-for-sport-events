@@ -17,6 +17,13 @@ p {
   overflow: hidden;
 }
 
+@media (max-width: 480px) {
+  .calendar-container {
+    width: auto;
+    max-width: 0 10px;
+  }
+}
+
 h2 {
   text-align: center;
   color: #333;
@@ -128,6 +135,12 @@ button {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
+@media only screen and (min-width: 290px) and (max-width: 854px) {
+  .event-list {
+    gap: 0;
+  }
+}
+
 .event-item:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -185,4 +198,41 @@ button {
 .add-event-btn:active {
   box-shadow: inset 0px 3px 7px rgba(32, 32, 84, 1);
   transform: translateY(2px);
+}
+
+@media only screen and (min-width: 481px) and (max-width: 854px) {
+  .calendar-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  button,
+  .icons,
+  .add-event-btn {
+    font-size: 16px;
+    padding: 12px;
+    height: auto;
+  }
+
+  .event-item {
+    padding: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .calendar-container {
+    padding: 10px;
+  }
+
+  button,
+  .icons,
+  .add-event-btn {
+    font-size: 14px;
+    padding: 10px;
+    height: auto;
+  }
+
+  .event-item {
+    padding: 6px;
+  }
 }
