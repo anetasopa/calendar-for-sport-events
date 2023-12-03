@@ -8,6 +8,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 480px) {
+  .add-event-container {
+    width: 80%;
+  }
+}
+
 .add-event-input {
   width: 100%;
   background-color: #fff;
