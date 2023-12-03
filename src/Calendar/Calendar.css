@@ -119,12 +119,23 @@ button {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 10px;
-  width: 100%;
+  width: calc(100% - 20px);
+  margin-right: -5px;
 }
 
-@media only screen and (min-width: 290px) and (max-width: 854px) {
+@media only screen and (max-width: 480px) {
   .event-list {
     gap: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .event-list {
+    gap: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -134,12 +145,6 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-}
-
-@media only screen and (max-width: 480px) {
-  .event-list {
-    gap: 0;
-  }
 }
 
 .event-item:hover {
