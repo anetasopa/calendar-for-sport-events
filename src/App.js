@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AddEvent from './AddEvent/AddEvent';
 import Calendar from './Calendar/Calendar';
 import { eventData } from './eventData';
@@ -20,12 +20,6 @@ const App = () => {
   };
 
   const handleAddEvent = (newEvent) => {
-    console.log({ newEvent222222: newEvent });
-    console.log('Id:', events.length + 1);
-    console.log('DateVenue:', newEvent.eventDate);
-    console.log('DateName:', newEvent.eventName);
-    console.log('DateSeason:', newEvent.eventSeason);
-
     const newEventWithId = {
       ...newEvent,
       id: events.length + 1,

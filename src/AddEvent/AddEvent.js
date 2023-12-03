@@ -2,8 +2,6 @@ import './AddEvent.css';
 import React, { useState } from 'react';
 
 const AddEvent = ({ onAddEvent }) => {
-  console.log({ onAddEvent });
-
   const [formData, setFormData] = useState({
     eventName: 'Name',
     eventDate: '2023-12-16',
