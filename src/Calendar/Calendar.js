@@ -35,6 +35,7 @@ const monthNames = [
 ];
 
 const Calendar = ({
+  event,
   events,
   onEventClick,
   onAddEvent,
@@ -112,7 +113,9 @@ const Calendar = ({
           return (
             <div
               key={day.date.toISOString()}
-              className={`event-item ${eventForDay ? eventForDay.status : ''}`}
+              className={`event-item ${eventForDay ? eventForDay.status : ''} ${
+                event ? eventForDay.status : ''
+              }`}
               onClick={() => handleDayClick(day.date)}
             >
               <p className="day">{day.day}</p>

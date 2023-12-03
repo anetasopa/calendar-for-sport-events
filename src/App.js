@@ -9,7 +9,6 @@ const App = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [currentPage, setCurrentPage] = useState('calendar');
   const [events, setEvents] = useState(eventData.data);
-  console.log({ events111111: events });
   const [lastScheduledOrPlayedEvent, setLastScheduledOrPlayedEvent] =
     useState(null);
 
@@ -46,6 +45,7 @@ const App = () => {
 
       {currentPage === 'calendar' && (
         <Calendar
+          event={selectedEvent}
           events={events}
           onEventClick={handleEventClick}
           onAddEvent={() => setCurrentPage('addEvent')}

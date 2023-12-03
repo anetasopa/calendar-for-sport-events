@@ -7,7 +7,7 @@ const AddEvent = ({ onAddEvent }) => {
   const [formData, setFormData] = useState({
     eventName: 'Name',
     eventDate: '2023-12-16',
-    eventStatus: 'Status',
+    eventStatus: 'scheduled',
     eventSeason: 'Season',
     eventHomeTeamName: 'eventHomeTeamName',
     eventHomeTeamSlug: 'eventHomeTeamSlug',
