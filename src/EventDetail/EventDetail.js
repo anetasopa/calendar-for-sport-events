@@ -2,6 +2,8 @@ import './EventDetail.css';
 import React from 'react';
 
 const EventDetail = ({ event, lastScheduledOrPlayedEvent }) => {
+  console.log({ event333333: event });
+
   const displayedEvent = event || lastScheduledOrPlayedEvent;
 
   const getTeamInfo = (team, event) => {

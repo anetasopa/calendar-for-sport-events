@@ -114,7 +114,7 @@ const Calendar = ({
             <div
               key={day.date.toISOString()}
               className={`event-item ${eventForDay ? eventForDay.status : ''} ${
-                event ? eventForDay.status : ''
+                event && eventForDay ? eventForDay.status : ''
               }`}
               onClick={() => handleDayClick(day.date)}
             >
