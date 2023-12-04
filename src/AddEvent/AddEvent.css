@@ -2,7 +2,7 @@
   max-width: 500px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -98,4 +98,14 @@ label {
 h4 {
   margin-bottom: 7px;
   color: rgba(32, 32, 84, 1);
+}
+
+.error-message {
+  color: red;
+  font-size: 0.6rem;
+  margin-bottom: 10px;
+}
+
+.input-without-margin {
+  margin-bottom: 0;
 }
