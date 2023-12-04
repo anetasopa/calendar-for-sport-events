@@ -15,7 +15,7 @@ This project focuses on a sports events calendar where users can effortlessly vi
 * The calendar displays a diverse array of sports events.
 * Users enjoy the flexibility to add new events to the calendar.
 * Detailed information about each event is easily accessible.
-* The system also includes validation to ensure data accuracy and reliability.
+* The project also includes validation to ensure data accuracy and reliability.
 
 ### Technology Stack:
 
