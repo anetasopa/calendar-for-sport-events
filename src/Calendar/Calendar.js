@@ -43,6 +43,8 @@ const Calendar = ({
 }) => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [filterStatus, setFilterStatus] = useState('all');
+  console.log({ event11111: event });
 
   const handlePrevMonth = () => {
     if (currentMonth === 0) {
@@ -82,9 +84,36 @@ const Calendar = ({
     onEventClick(eventForDate);
   };
 
+  const handleStatusFilterChange = (e) => {
+    setFilterStatus(e.target.value);
+  };
+
+  const filteredMonthDays = generateMonthDays(currentYear, currentMonth).filter(
+    (day) => {
+      const eventForDay = events.find(
+        (event) =>
+          new Date(event.dateVenue).getDate() === day.day &&
+          new Date(event.dateVenue).getMonth() === currentMonth &&
+          new Date(event.dateVenue).getFullYear() === currentYear &&
+          (filterStatus === 'all' ||
+            event.status === filterStatus ||
+            event.eventStatus),
+      );
+      return filterStatus === 'all' || !!eventForDay;
+    },
+  );
+
   return (
     <div className="calendar-container">
       <h2>Calendar</h2>
+      <div className="filter-container">
+        <label>Status Filter:</label>
+        <select value={filterStatus} onChange={handleStatusFilterChange}>
+          <option value="all">All</option>
+          <option value="scheduled">Scheduled</option>
+          <option value="played">Played</option>
+        </select>
+      </div>
       <div className="month-navigation">
         <button className="icons" onClick={handlePrevMonth}>
           &lt;
@@ -102,12 +131,15 @@ const Calendar = ({
         ))}
       </div>
       <div className="event-list">
-        {generateMonthDays(currentYear, currentMonth).map((day) => {
+        {filteredMonthDays.map((day) => {
           const eventForDay = events.find(
             (event) =>
               new Date(event.dateVenue).getDate() === day.day &&
               new Date(event.dateVenue).getMonth() === currentMonth &&
-              new Date(event.dateVenue).getFullYear() === currentYear,
+              new Date(event.dateVenue).getFullYear() === currentYear &&
+              (filterStatus === 'all' ||
+                event.status === filterStatus ||
+                event.eventStatus),
           );
 
           return (

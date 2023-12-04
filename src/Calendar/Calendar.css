@@ -21,6 +21,7 @@ p {
   .calendar-container {
     width: auto;
     max-width: 0 10px;
+    margin: 20px;
   }
 }
 
